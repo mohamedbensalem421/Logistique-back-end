@@ -30,7 +30,7 @@ app.delete('/api/v1/frets/:id' , async(req,res) =>{
 })
 app.use(errorHandler)
 app.use('*', (req,res) => res.send('not found'))
-const port = 3000 || process.env.PORT
+const port = process.env.PORT || 3000
 const start = async () =>{
   try {
     await connectDB(process.env.MONGO_URI)
